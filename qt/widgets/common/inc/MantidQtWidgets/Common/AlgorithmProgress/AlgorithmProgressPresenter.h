@@ -8,6 +8,7 @@
 #define ALGORITHMPROGRESSPRESENTER_H
 
 #include "MantidQtWidgets/Common/AlgorithmProgress/AlgorithmProgressModel.h"
+#include "MantidQtWidgets/Common/AlgorithmProgress/IAlgorithmProgressWidget.h"
 #include "MantidQtWidgets/Common/AlgorithmProgress/AlgorithmProgressPresenterBase.h"
 
 #include <QWidget>
@@ -29,7 +30,7 @@
  */
 namespace MantidQt {
 namespace MantidWidgets {
-class AlgorithmProgressWidget;
+class IAlgorithmProgressWidget;
 
 class AlgorithmProgressPresenter : public AlgorithmProgressPresenterBase {
   Q_OBJECT
@@ -52,7 +53,7 @@ private:
   Mantid::API::AlgorithmID m_algorithm;
   /// The view that contains the progress widget.
   /// The creator of the view also owns the view (Python), not this presenter.
-  AlgorithmProgressWidget *m_view;
+  IAlgorithmProgressWidget *m_view;
 };
 } // namespace MantidWidgets
 } // namespace MantidQt

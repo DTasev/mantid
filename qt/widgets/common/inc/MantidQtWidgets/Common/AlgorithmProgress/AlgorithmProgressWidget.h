@@ -11,6 +11,7 @@
 //----------------------------------
 #include "MantidAPI/AlgorithmObserver.h"
 #include "MantidQtWidgets/Common/AlgorithmProgress/AlgorithmProgressDialogWidget.h"
+#include "MantidQtWidgets/Common/AlgorithmProgress/IAlgorithmProgressWidget.h"
 #include "MantidQtWidgets/Common/AlgorithmProgress/AlgorithmProgressPresenter.h"
 #include "MantidQtWidgets/Common/DllOption.h"
 
@@ -33,7 +34,7 @@ class QProgressBar;
 namespace MantidQt {
 namespace MantidWidgets {
 
-class EXPORT_OPT_MANTIDQT_COMMON AlgorithmProgressWidget : public QWidget {
+class EXPORT_OPT_MANTIDQT_COMMON AlgorithmProgressWidget : public QWidget, public IAlgorithmProgressWidget {
   Q_OBJECT
 public:
   AlgorithmProgressWidget(QWidget *parent = nullptr);

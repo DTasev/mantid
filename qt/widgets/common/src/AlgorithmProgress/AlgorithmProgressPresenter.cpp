@@ -5,12 +5,12 @@
 //     & Institut Laue - Langevin
 // SPDX - License - Identifier: GPL - 3.0 +
 #include "MantidQtWidgets/Common/AlgorithmProgress/AlgorithmProgressPresenter.h"
-#include "MantidQtWidgets/Common/AlgorithmProgress/AlgorithmProgressWidget.h"
+#include "MantidQtWidgets/Common/AlgorithmProgress/IAlgorithmProgressWidget.h"
 
 namespace MantidQt {
 namespace MantidWidgets {
 AlgorithmProgressPresenter::AlgorithmProgressPresenter(
-    QWidget *parent, AlgorithmProgressWidget *view)
+    QWidget *parent, IAlgorithmProgressWidget *view)
     : AlgorithmProgressPresenterBase(parent), m_model{AlgorithmProgressModel(
                                                   this)},
       m_algorithm(nullptr), m_view(view) {}

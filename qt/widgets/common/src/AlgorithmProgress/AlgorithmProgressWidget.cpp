@@ -19,7 +19,6 @@ AlgorithmProgressWidget::AlgorithmProgressWidget(QWidget *parent)
       m_progressBar{new QProgressBar(this)}, m_layout{new QHBoxLayout(this)},
       m_detailsButton{new QPushButton("Details")},
       m_presenter{std::make_unique<AlgorithmProgressPresenter>(parent, this)}
-
 {
   m_progressBar->setAlignment(Qt::AlignHCenter);
   m_layout->addWidget(m_progressBar);

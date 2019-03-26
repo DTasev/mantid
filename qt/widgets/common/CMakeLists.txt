@@ -212,6 +212,7 @@ set ( QT5_INC_FILES
   inc/MantidQtWidgets/Common/PropertyWidgetFactory.h
   inc/MantidQtWidgets/Common/SequentialFitDialog.h
   inc/MantidQtWidgets/Common/WidgetScrollbarDecorator.h
+  inc/MantidQtWidgets/Common/AlgorithmProgress/IAlgorithmProgressWidget.h
   inc/MantidQtWidgets/Common/Batch/QtStandardItemTreeAdapter.h
   inc/MantidQtWidgets/Common/Batch/QtBasicNavigation.h
   inc/MantidQtWidgets/Common/Batch/QtTreeCursorNavigation.h
@@ -827,6 +828,10 @@ set( TEST_FILES
   test/SignalBlockerTest.h
   test/AlgorithmHintStrategyTest.h
   test/TrackedActionTest.h
+
+  test/AlgorithmProgress/MockAlgorithmProgressWidget.h
+  test/AlgorithmProgress/AlgorithmProgressPresenterTest.h
+
   test/DataProcessorUI/CommandsTest.h
   test/DataProcessorUI/GenerateNotebookTest.h
   test/DataProcessorUI/OneLevelTreeManagerTest.h
