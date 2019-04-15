@@ -15,7 +15,6 @@ public:
 };
 
 } // namespace MantidWidgets
-
 } // namespace MantidQt
 
-#endif IALGORITHMPROGRESSWIDGET_H
+#endif // IALGORITHMPROGRESSWIDGET_H

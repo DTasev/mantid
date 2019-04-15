@@ -39,17 +39,17 @@ class EXPORT_OPT_MANTIDQT_COMMON AlgorithmProgressWidget : public QWidget, publi
 public:
   AlgorithmProgressWidget(QWidget *parent = nullptr);
 
-  QProgressBar *progressBar() const;
+  QProgressBar *progressBar() const override;
 
   /// Setup the view for whenever an algorithm has started.
-  void algorithmStarted();
+  void algorithmStarted() override;
   /// Setup the view for whenever an algorithm has ended.
-  void algorithmEnded();
+  void algorithmEnded() override;
   /// Enable or disable the processing of updates to the algorithm progress
   void blockUpdates(bool block = true);
 
 public slots:
-  void showDetailsDialog();
+  void showDetailsDialog() override;
 
 private:
   // Widgets are managed by Qt. This class owns them, and Qt will delete them on

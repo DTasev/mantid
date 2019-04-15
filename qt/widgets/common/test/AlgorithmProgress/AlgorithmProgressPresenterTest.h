@@ -1,6 +1,7 @@
-#ifndef MANTIDQT_API_ALGORITHMPROGRESSTEST_H_
-#define MANTIDQT_API_ALGORITHMPROGRESSTEST_H_
+#ifndef MANTIDQT_MANTIDWIDGETS_ALGORITHMPROGRESSTEST_H_
+#define MANTIDQT_MANTIDWIDGETS_ALGORITHMPROGRESSTEST_H_
 #include <cxxtest/TestSuite.h>
+#include "MantidQtWidgets/Common/AlgorithmProgress/MockAlgorithmProgressWidget.h"
 
 class AlgorithmProgressPresenterTest : public CxxTest::TestSuite {
 public:
@@ -10,5 +11,8 @@ public:
   static void destroySuite(AlgorithmProgressPresenterTest *suite) {
     delete suite;
   }
+
+private:
+  boost::shared_ptr<NiceMock<MockAlgorithmProgressWidget>> mockView;
 };
-#endif MANTIDQT_API_ALGORITHMPROGRESSTEST_H_
+#endif // MANTIDQT_MANTIDWIDGETS_ALGORITHMPROGRESSTEST_H_
