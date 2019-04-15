@@ -254,8 +254,8 @@ The current set of reusable items are:
 Python
 ######
 
-Interfaces can also be created in Python using the `PyQt4
-<http://pyqt.sourceforge.net/Docs/PyQt4/>`_ package. The code for the
+Interfaces can also be created in Python using the `qtpy
+<https://pypi.org/project/QtPy/>`_ package. The code for the
 interface should be placed in a Python `package
 <https://docs.python.org/2/tutorial/modules.html#packages>`_ under the
 ``Code/Mantid/scripts`` directory. It should be named after the interface
