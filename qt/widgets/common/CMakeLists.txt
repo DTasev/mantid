@@ -74,6 +74,7 @@ set ( QT5_SRC_FILES
   src/AlgorithmProgress/AlgorithmProgressModel.cpp
   src/AlgorithmProgress/AlgorithmProgressPresenter.cpp
   src/AlgorithmProgress/AlgorithmProgressPresenterBase.cpp
+  src/AlgorithmProgress/AlgorithmProgressDialogPresenter.cpp
   src/AlgorithmProgress/AlgorithmProgressWidget.cpp
 
   src/Batch/RowLocation.cpp
@@ -237,6 +238,8 @@ set ( QT5_INC_FILES
   inc/MantidQtWidgets/Common/WorkspacePresenter/WorkspaceProviderNotifiable.h
 
   inc/MantidQtWidgets/Common/AlgorithmProgress/AlgorithmProgressModel.h
+  inc/MantidQtWidgets/Common/AlgorithmProgress/MockAlgorithmProgressWidget.h
+
 )
 
 set ( QT5_UI_FILES
@@ -829,9 +832,6 @@ set( TEST_FILES
   test/AlgorithmHintStrategyTest.h
   test/TrackedActionTest.h
 
-  test/AlgorithmProgress/MockAlgorithmProgressWidget.h
-  test/AlgorithmProgress/AlgorithmProgressPresenterTest.h
-
   test/DataProcessorUI/CommandsTest.h
   test/DataProcessorUI/GenerateNotebookTest.h
   test/DataProcessorUI/OneLevelTreeManagerTest.h
@@ -890,6 +890,9 @@ set( QT5_TEST_FILES
   test/FindFilesThreadPoolManagerTest.h
   test/FindFilesWorkerTest.h
   test/InterfaceManagerTest.h
+
+  test/AlgorithmProgress/AlgorithmProgressPresenterTest.h
+
   test/WorkspacePresenter/ADSAdapterTest.h
   test/WorkspacePresenter/WorkspacePresenterTest.h
 )
