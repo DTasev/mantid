@@ -892,6 +892,7 @@ set( QT5_TEST_FILES
   test/InterfaceManagerTest.h
 
   test/AlgorithmProgress/AlgorithmProgressPresenterTest.h
+  test/AlgorithmProgress/AlgorithmProgressDialogPresenterTest.h
 
   test/WorkspacePresenter/ADSAdapterTest.h
   test/WorkspacePresenter/WorkspacePresenterTest.h

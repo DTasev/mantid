@@ -31,32 +31,31 @@
  */
 namespace MantidQt {
 namespace MantidWidgets {
-class IAlgorithmProgressWidget;
+    class IAlgorithmProgressWidget;
 
-class EXPORT_OPT_MANTIDQT_COMMON AlgorithmProgressPresenter
-    : public AlgorithmProgressPresenterBase {
-  Q_OBJECT
+    class EXPORT_OPT_MANTIDQT_COMMON AlgorithmProgressPresenter
+        : public AlgorithmProgressPresenterBase {
+        Q_OBJECT
 
-public:
-  AlgorithmProgressPresenter(QWidget *parent, IAlgorithmProgressWidget *);
-  AlgorithmProgressPresenter(IAlgorithmProgressWidget *);
+    public:
+        AlgorithmProgressPresenter(QWidget* parent, IAlgorithmProgressWidget*);
 
-  void algorithmStartedSlot(Mantid::API::AlgorithmID) override;
-  void updateProgressBarSlot(Mantid::API::AlgorithmID, double progress,
-                             QString message) override;
-  void algorithmEndedSlot(Mantid::API::AlgorithmID) override;
+        void algorithmStartedSlot(Mantid::API::AlgorithmID) override;
+        void updateProgressBarSlot(Mantid::API::AlgorithmID, double progress,
+            QString message) override;
+        void algorithmEndedSlot(Mantid::API::AlgorithmID) override;
 
-  AlgorithmProgressModel &model() { return m_model; }
+        AlgorithmProgressModel& model() { return m_model; }
 
-private:
-  /// The model which observes events happening to the algorithms
-  AlgorithmProgressModel m_model;
-  /// The algorithm for which a progress bar is currently being controlled
-  Mantid::API::AlgorithmID m_algorithm;
-  /// The view that contains the progress widget.
-  /// The creator of the view also owns the view (Python), not this presenter.
-  IAlgorithmProgressWidget *m_view;
-};
+    private:
+        /// The model which observes events happening to the algorithms
+        AlgorithmProgressModel m_model;
+        /// The algorithm for which a progress bar is currently being controlled
+        Mantid::API::AlgorithmID m_algorithm;
+        /// The view that contains the progress widget.
+        /// The creator of the view also owns the view (Python), not this presenter.
+        IAlgorithmProgressWidget* m_view;
+    };
 } // namespace MantidWidgets
 } // namespace MantidQt
 

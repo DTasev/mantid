@@ -33,34 +33,35 @@
  */
 namespace MantidQt {
 namespace MantidWidgets {
-class AlgorithmProgressPresenter;
-class AlgorithmProgressDialogPresenter;
-class AlgorithmProgressModel : public Mantid::API::AlgorithmObserver {
-public:
-  AlgorithmProgressModel(AlgorithmProgressPresenter *presenter);
+    class AlgorithmProgressPresenter;
+    class AlgorithmProgressDialogPresenter;
+    class AlgorithmProgressModel : public Mantid::API::AlgorithmObserver {
+    public:
+        AlgorithmProgressModel(AlgorithmProgressPresenter* presenter);
+        ~AlgorithmProgressModel() override;
 
-  /// Observes ALL starting algorithms. Triggered when a new algorithm
-  /// is constructed, and will attach itself as an observer
-  /// Note: at this point the algorithm is not fully initialized
-  void startingHandle(Mantid::API::IAlgorithm_sptr alg) override;
-  /// Triggered when the algorithm is executed
-  void startHandle(const Mantid::API::IAlgorithm *alg) override;
-  /// Triggered when the algorithm is finished
-  void finishHandle(const Mantid::API::IAlgorithm *alg) override;
-  /// Triggered when the algorithm reports progress
-  void progressHandle(const Mantid::API::IAlgorithm *alg, double progress,
-                      const std::string &message) override;
-  /// Triggered when the algorithm encounters an error
-  void errorHandle(const Mantid::API::IAlgorithm *alg,
-                   const std::string &what) override;
-  /// Removes itself as an observer from the algorithm
-  void removeFrom(const Mantid::API::IAlgorithm *alg);
-  void setDialog(AlgorithmProgressDialogPresenter * /*presenter*/);
+        /// Observes ALL starting algorithms. Triggered when a new algorithm
+        /// is constructed, and will attach itself as an observer
+        /// Note: at this point the algorithm is not fully initialized
+        void startingHandle(Mantid::API::IAlgorithm_sptr alg) override;
+        /// Triggered when the algorithm is executed
+        void startHandle(const Mantid::API::IAlgorithm* alg) override;
+        /// Triggered when the algorithm is finished
+        void finishHandle(const Mantid::API::IAlgorithm* alg) override;
+        /// Triggered when the algorithm reports progress
+        void progressHandle(const Mantid::API::IAlgorithm* alg, double progress,
+            const std::string& message) override;
+        /// Triggered when the algorithm encounters an error
+        void errorHandle(const Mantid::API::IAlgorithm* alg,
+            const std::string& what) override;
+        /// Removes itself as an observer from the algorithm
+        void removeFrom(const Mantid::API::IAlgorithm* alg);
+        void setDialog(AlgorithmProgressDialogPresenter* /*presenter*/);
 
-private:
-  QPointer<AlgorithmProgressDialogPresenter> m_dialogPresenter;
-  AlgorithmProgressPresenter *m_mainWindowPresenter;
-};
+    private:
+        QPointer<AlgorithmProgressDialogPresenter> m_dialogPresenter;
+        AlgorithmProgressPresenter* m_mainWindowPresenter;
+    };
 
 } // namespace MantidWidgets
 } // namespace MantidQt
