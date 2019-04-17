@@ -238,8 +238,6 @@ set ( QT5_INC_FILES
   inc/MantidQtWidgets/Common/WorkspacePresenter/WorkspaceProviderNotifiable.h
 
   inc/MantidQtWidgets/Common/AlgorithmProgress/AlgorithmProgressModel.h
-  inc/MantidQtWidgets/Common/AlgorithmProgress/MockAlgorithmProgressWidget.h
-
 )
 
 set ( QT5_UI_FILES
@@ -904,6 +902,7 @@ mtd_add_qt_tests (TARGET_NAME MantidQtWidgetsCommonTest
     ../../../Framework/TestHelpers/inc
     ../../../Framework/DataObjects/inc
     ../../../Framework/Crystal/inc
+    ${GMOCK_INCLUDE_DIR}
   TEST_HELPER_SRCS
     ../../../Framework/TestHelpers/src/TearDownWorld.cpp
     ../../../Framework/TestHelpers/src/WorkspaceCreationHelper.cpp
