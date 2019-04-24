@@ -110,8 +110,8 @@ To check out a particular pull request for functional testing use the following 
 
 where ``<ID>`` is the pull request number given on GitHub and ``<main-remote-name>`` is the name
 of the remote pointing to the original ``mantid`` repository. If you cloned directly from `mantid <https://github.com/mantidproject/mantid>`_
-then ``main-remote-name=origin`` else if you cloned from a fork then it is the name of remote that points
-back to the original repository.
+then replace ``<main-remote-name>`` with ``origin``, else if you cloned from a fork then it is the name of remote that points
+back to the original repository. If you are not sure, you can do ``git remote -v`` and see which one points to ``https://github.com/mantidproject/mantid``.
 
 Note that these commands will checkout a temporary branch that has the development branch merged with master and not just
 the development branch on its own. This command can be aliased by adding the following to the ``[alias]`` section of your ``~/.gitconfig``
@@ -119,7 +119,7 @@ file:
 
 .. code-block:: sh
 
-   test-pr=!f() { git fetch <main-remote-name> +pull/$1/merge:pr/$1-merged && git checkout pr/$1-merged; }; f
+   test-pr = ! "f() { git fetch <main-remote-name> +pull/$1/merge:pr/$1-merged && git checkout pr/$1-merged; }; f"
 
 where again ``<main-remote-name>`` has the same meaning as above. A given pull request can now be checkout with
 
